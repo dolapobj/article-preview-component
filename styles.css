@@ -107,7 +107,8 @@ main {
   display: none;
 }
 
-.card__footer.show-share .card__footer-content, .card__footer.show-share .card__prof-pic {
+.card__footer.show-share .card__footer-content,
+.card__footer.show-share .card__prof-pic {
   display: none;
 }
 

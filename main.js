@@ -9,7 +9,7 @@ shareButton.addEventListener('click', (e) => {
     } else {
      // Get the position of the share button
     
-shareBox.classList.toggle('show-share')
+    shareBox.classList.toggle('show-share')
 
     }
 })

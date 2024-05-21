@@ -49,7 +49,7 @@ main {
   &__image {
     width: 100%;
     height: auto;
-  display: block;
+    display: block;
   }
 
   &__content {
@@ -70,11 +70,9 @@ main {
     display: flex;
     align-items: center;
     padding-inline: 1.5rem;
-    padding-block: .5rem;
+    padding-block: 0.5rem;
     padding-bottom: 1rem;
     position: relative;
-    
-    
   }
   &__prof-pic {
     border-radius: 50%;
@@ -110,31 +108,24 @@ main {
     fill: white;
   }
 
-  &__share-content{
+  &__share-content {
     display: none;
-    
   }
   &__share-content-wrapper-mobile {
     display: flex;
     align-items: center;
-    margin: .5rem;
-    gap: .75rem;
-
+    margin: 0.5rem;
+    gap: 0.75rem;
   }
-  
+
   &__share-content-wrapper-desktop {
     display: none;
-  
-
-
   }
-
 }
 
-
-.card__footer.show-share .card__footer-content,.card__footer.show-share  .card__prof-pic{
-  display:none;
-
+.card__footer.show-share .card__footer-content,
+.card__footer.show-share .card__prof-pic {
+  display: none;
 }
 
 .card__footer.show-share .card__share-content {
@@ -144,8 +135,7 @@ main {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.card__footer.show-share{
-
+.card__footer.show-share {
   background-color: $main-color;
   opacity: 1; /* Fade in */
   transform: scale(1);
@@ -158,7 +148,7 @@ main {
 
 .share {
   font-size: 11px;
-  letter-spacing: .3rem;
+  letter-spacing: 0.3rem;
 }
 .small {
   font-size: 11px;
@@ -174,14 +164,12 @@ main {
   color: $third-color;
 }
 
-
 @media (min-width: 768px) {
-
-  main{
+  main {
     justify-content: center;
   }
-  .card{
-    flex-direction:row;
+  .card {
+    flex-direction: row;
     min-width: none;
     max-width: 50%;
     min-width: 600px;
@@ -189,20 +177,18 @@ main {
     height: 20%;
     overflow: visible;
 
-    &__image-wrapper{
+    &__image-wrapper {
       flex: 1;
       height: 100%;
     }
-    &__image{
+    &__image {
       height: 100%;
       object-fit: cover;
-      
     }
     &__content-wrapper {
       flex: 1;
-
     }
-    &__share-box-desktop{
+    &__share-box-desktop {
       display: none;
       justify-content: center;
       align-items: center;
@@ -210,40 +196,36 @@ main {
       background-color: $main-color;
     }
 
-    &__share-box-desktop.show-share{
+    &__share-box-desktop.show-share {
       display: block;
       position: absolute;
       margin-block: 2rem;
       bottom: 80%;
       left: 60%;
-       transform: translateX(-25%) translateY(-2px);
+      transform: translateX(-25%) translateY(-2px);
       text-align: center;
       margin-inline: auto;
       max-width: 60%;
-      padding-block: .4rem;
+      padding-block: 0.4rem;
       background-color: $main-color;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       z-index: 1000;
       overflow: visible;
     }
 
-    &__share-box-desktop.show-share &__share-content-wrapper-desktop{
-      margin: .5rem;
-      gap: .75rem;
+    &__share-box-desktop.show-share &__share-content-wrapper-desktop {
+      margin: 0.5rem;
+      gap: 0.75rem;
       display: flex;
-  
-      justify-content: center;
-    align-items: center;
-    max-width: 100%;
 
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
     }
 
-    &__share-icon-wrapper{
+    &__share-icon-wrapper {
       position: relative;
     }
-
-    
- 
   }
   .share-arrow {
     position: absolute;

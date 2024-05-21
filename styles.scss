@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+$main-color: hsl(217, 19%, 35%);
+$second-color: hsl(214, 17%, 51%);
+$third-color: hsl(212, 23%, 69%);
+$fourth-color: hsl(210, 46%, 95%);
+$font-family-manrope: "Manrope", sans-serif;
+$breakpoint-tablet: 768px;
+
+html {
+  font-family: $font-family-manrope;
+
+  background-color: $fourth-color;
+}
+
+body {
+  height: 100vh;
+}
+main {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  max-width: 40%;
+  min-width: 300px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 0px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  &__image-wrapper {
+    width: 100%;
+  }
+  &__image {
+    width: 100%;
+    height: auto;
+  display: block;
+  }
+
+  &__content {
+    margin-inline: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  &__text-main {
+    margin-bottom: 0.75rem;
+  }
+
+  &__text-second {
+    margin-bottom: 1rem;
+  }
+
+  &__footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-inline: 1.5rem;
+    padding-block: .5rem;
+    padding-bottom: 1rem;
+    position: relative;
+    
+    
+  }
+  &__prof-pic {
+    border-radius: 50%;
+    width: 15%;
+    margin-right: 1rem;
+  }
+
+  &__footer-content {
+    margin-right: 1rem;
+  }
+
+  &__share-icon {
+    margin-inline: auto;
+    margin-block: auto;
+    transition: fill 0.3s ease;
+  }
+
+  &__share-icon-wrapper {
+    display: center;
+    background-color: $fourth-color;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-inline: auto;
+    margin-block: auto;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  &__share-icon-wrapper:hover {
+    background-color: $second-color;
+  }
+  &__share-icon-wrapper:hover &__share-icon path {
+    fill: white;
+  }
+
+  &__share-content{
+    display: none;
+    
+  }
+  &__share-content-wrapper-mobile {
+    display: flex;
+    align-items: center;
+    margin: .5rem;
+    gap: .75rem;
+
+  }
+  
+  &__share-content-wrapper-desktop {
+    display: none;
+  
+
+
+  }
+
+}
+
+
+.card__footer.show-share .card__footer-content,.card__footer.show-share  .card__prof-pic{
+  display:none;
+
+}
+
+.card__footer.show-share .card__share-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card__footer.show-share{
+
+  background-color: $main-color;
+  opacity: 1; /* Fade in */
+  transform: scale(1);
+}
+
+.normal {
+  font-size: 13px;
+  color: $main-color;
+}
+
+.share {
+  font-size: 11px;
+  letter-spacing: .3rem;
+}
+.small {
+  font-size: 11px;
+  color: $second-color;
+  line-height: 1.6;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.light {
+  color: $third-color;
+}
+
+
+@media (min-width: 768px) {
+
+  main{
+    justify-content: center;
+  }
+  .card{
+    flex-direction:row;
+    min-width: none;
+    max-width: 50%;
+    min-width: 600px;
+    min-height: 250px;
+    height: 20%;
+    overflow: visible;
+
+    &__image-wrapper{
+      flex: 1;
+      height: 100%;
+    }
+    &__image{
+      height: 100%;
+      object-fit: cover;
+      
+    }
+    &__content-wrapper {
+      flex: 1;
+
+    }
+    &__share-box-desktop{
+      display: none;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      background-color: $main-color;
+    }
+
+    &__share-box-desktop.show-share{
+      display: block;
+      position: absolute;
+      margin-block: 2rem;
+      bottom: 80%;
+      left: 60%;
+       transform: translateX(-25%) translateY(-2px);
+      text-align: center;
+      margin-inline: auto;
+      max-width: 60%;
+      padding-block: .4rem;
+      background-color: $main-color;
+      border-radius: .5rem;
+      z-index: 1000;
+      overflow: visible;
+    }
+
+    &__share-box-desktop.show-share &__share-content-wrapper-desktop{
+      margin: .5rem;
+      gap: .75rem;
+      display: flex;
+  
+      justify-content: center;
+    align-items: center;
+    max-width: 100%;
+
+    }
+
+    &__share-icon-wrapper{
+      position: relative;
+    }
+
+    
+ 
+  }
+  .share-arrow {
+    position: absolute;
+    bottom: -5px; /* Adjust based on the size of the arrow */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $main-color;
+  }
+}
